@@ -1,57 +1,147 @@
 <!DOCTYPE html>
-<!-- saved from url=(0059)https://preview.colorlib.com/theme/bootstrap/login-form-20/ -->
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  	<title>Login 10</title>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Painel Admin</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+    }
+
+  /* Ajustando o topo no painel admin */
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #222;
+    padding: 15px 30px;
+    color: white;
+    flex-wrap: wrap; /* Permite que o conteúdo se ajuste */
+}
+
+.admin-label {
+    font-size: 20px;
+    font-weight: bold;
+    padding-right: 20px; /* Adiciona um pouco de espaçamento à direita */
+}
+
+nav {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap; /* Ajusta os itens para telas pequenas */
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 15px; /* Adiciona espaçamento interno aos links */
+    border-radius: 5px; /* Adiciona borda arredondada aos links */
+}
+.nav-link:hover {
+    color: #27ae60;
+    background: #444;
+}
+
+.logout-btn {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+/* Ajustando para telas menores */
+@media (max-width: 768px) {
+    .top-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px; /* Ajuste o padding no layout pequeno */
+    }
+    .admin-label {
+        font-size: 18px;
+        padding-right: 0;
+    }
+
+    .nav-link {
+        font-size: 14px;
+        padding: 8px 12px; /* Ajuste no padding dos links em telas pequenas */
+    }
+
+    .logout-btn {
+        width: 100%;
+        margin-top: 15px;
+        padding: 15px 0; /* Maior padding para o botão de logout em telas pequenas */
+    }
+}
+
+
+    .card-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      max-width: 800px;
+      margin: 40px auto;
+    }
+
+    .card {
+      background: white;
+      height: 100px;
+      display: grid;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      border-radius: 8px;
+      font-weight: bold;
+      color: #333;
+      padding: 1rem 0;
+    }
+    .card span {
+      font-size: 2rem;
+      color: #919191;
+    }
+    @media (max-width: 768px) {
+    .card-container {
+        grid-template-columns: 1fr 1fr; /* 2 colunas para telas menores */
+    }
+}
+
+@media (max-width: 480px) {
+    .card-container {
+        grid-template-columns: 1fr; /* 1 coluna para telas muito pequenas */
+    }
+}
+  </style>
+</head>
+<body>
+
+  <body>
+    <div class="top-bar">
+        <div class="admin-label">Administrador</div>
+        <nav>
+          <a href="produt.html" class="nav-link">Atualizar produto
+          </a>
+          <a href="add_item.html" class="nav-link">Adicionar produto</a>
+        </nav>
+        <button class="logout-btn">Sair</button>
+      </div>
     
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-	<link href="./Login 10_files/css" rel="stylesheet">
+  <div class="card-container " style="padding: 15px">
+    <div class="card"><span>42</span> Produtos</div>
+    <div class="card"><span>210</span>  Vendidos</div>
+    <div class="card"><span>59</span>  Faturas</div>
+    <div class="card"><span>94</span>  Clientes</div>
+    <div class="card"><span>73</span>  Stock</div>
+    <div class="card"><span>1</span>  Admins</div>
+  </div>
 
-	<link rel="stylesheet" href="./Login 10_files/font-awesome.min.css">
-	
-	<link rel="stylesheet" href="./Login 10_files/style.css">
-
-	</head>
-	<body class="img js-fullheight" style="background-image: url('./images/back_login.jpg'); height: 961px;">
-	<section class="ftco-section">
-		<div class="container">
-			<div class="row justify-content-center">
-				<div class="col-md-6 text-center mb-5">
-					<h2 class="heading-section">Login</h2>
-				</div>
-			</div>
-			<div class="row justify-content-center">
-				<div class="col-md-6 col-lg-4">
-					<div class="login-wrap p-0">
-		      	<form class="signin-form">
-		      		<div class="form-group">
-		      			<input type="email" name="email" class="form-control" placeholder="Email" required="">
-		      		</div>
-	            <div class="form-group">
-	              <input id="password-field" name="password" type="password" class="form-control" placeholder="Password" required="">
-	              <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
-	            </div>
-	            <div class="form-group">
-	            	<button type="submit" class="form-control btn btn-primary submit px-3">Entrar</button>
-	            </div>
-	          </form>
-	          <p class="w-100 text-center">— Ainda nao tem uma conta? —</p>
-	          <div class="social d-flex text-center">
-	          	<a href="signup.php" class="px-2 py-2 ml-md-1 rounded"><span class="ion-logo-user mr-2"></span> Cadastrar</a>
-	          </div>
-		      </div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<script src="./Login 10_files/jquery.min.js"></script>
-  <script src="./Login 10_files/popper.js"></script>
-  <script src="./Login 10_files/bootstrap.min.js"></script>
-  <script src="./Login 10_files/main.js"></script>
-
-	<script defer="" src="./Login 10_files/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon="{&quot;rayId&quot;:&quot;92e150a82dd7eeea&quot;,&quot;serverTiming&quot;:{&quot;name&quot;:{&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfSpeedBrain&quot;:true,&quot;cfCacheStatus&quot;:true}},&quot;version&quot;:&quot;2025.3.0&quot;,&quot;token&quot;:&quot;cd0b4b3a733644fc843ef0b185f98241&quot;}" crossorigin="anonymous"></script>
-
-
-
-</body></html>
+</body>
+</html>
